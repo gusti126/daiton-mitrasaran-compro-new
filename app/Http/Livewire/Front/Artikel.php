@@ -8,9 +8,10 @@ use Livewire\Component;
 
 class Artikel extends Component
 {
-    public $artikel, $limit = 3;
+    public $artikel, $limit = 4;
     public $keyword = '';
-    
+    public $maxArtikel = false;
+
 
     public function render()
     {
@@ -26,6 +27,7 @@ class Artikel extends Component
             $allARtikel = ModelsArtikel::limit($this->limit)->get();
             $this->artikel = $allARtikel;
         }
+
         return view('livewire.front.artikel', [
             'datahead' => $datahead,
             'artikel' => $this->artikel,
@@ -35,5 +37,9 @@ class Artikel extends Component
     public function loadMore()
     {
         $this->limit += 3;
+        $artikelC = ModelsArtikel::count();
+        if ($this->limit == $artikelC) {
+            $this->maxArtikel = true;
+        }
     }
 }

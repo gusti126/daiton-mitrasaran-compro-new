@@ -23,6 +23,11 @@
                         class="fas fa-book-reader"></i>
                     <span>Artikel</span></a>
             </li>
+            <li class="  {{ request()->is('admin/pesan*') ? 'active' : '' }} ">
+                <a class="nav-link" href="{{ route('livewire-pesan') }}">
+                    <i class="fas fa-comments"></i>
+                    <span>Pesan masuk</span></a>
+            </li>
         </ul>
 
     </aside>

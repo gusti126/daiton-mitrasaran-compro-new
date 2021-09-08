@@ -13,15 +13,14 @@
         <div class="mt-6 px-4 md:px-20 relative">
             <div class="grid grid-flow-row grid-cols-1 md:grid-cols-2 z-20">
                 <div>
-                    <img src="{{ asset('storage/' . $datahead->thumbnail) }}" alt="image"
-                        class="w-96 mx-auto rounded-lg">
+                    <img src="{{ asset('storage/' . $datahead->thumbnail) }}" alt="image" class="w-96 mx-auto rounded">
                 </div>
                 <div class="___class_+?4___">
                     <div class="text-white font-semibold text-xl">{{ $datahead->title }}</div>
                     <div class="text-gray-300 mt-2 text-sm">
                         {!! \Illuminate\Support\Str::limit($datahead->body, 450, $end = '...') !!}
                     </div>
-                    <div class="mt-2 text-blue-400">Read more</div>
+                    <a href="{{ route('detail-artikel', $datahead->slug) }}" class="mt-2 text-blue-400">Read more</a>
 
                 </div>
             </div>
@@ -46,15 +45,17 @@
     <div class="mt-6 px-4 md:px-20">
         <div class="grid grid-flow-row grid-cols-12 gap-6">
             @forelse ($artikel as $item)
-                <div class="col-span-12 md:col-span-4">
+                <div class="col-span-12 md:col-span-3">
                     <div>
-                        <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="" class="w-full rounded">
+                        <img src="{{ asset('storage/' . $item->thumbnail) }}" alt=""
+                            class="w-full rounded h-32 object-cover">
                     </div>
                     <div class="font-black text-blue-900 mt-2">
                         {{ $item->title }}
                     </div>
                     <div class="text-sm text-gray-700">
-                        {!! \Illuminate\Support\Str::limit($datahead->body, 200, $end = '...') !!}
+                        {!! Str::limit($item->body, 100) !!}
+                        {{-- {!! \Illuminate\Support\Str::limit($item->body, 100, $end = '...')  !!} --}}
                     </div>
                     <div class="mt-2">
                         <a href="{{ route('detail-artikel', $item->slug) }}"
@@ -67,14 +68,15 @@
                 </div>
             @endforelse
         </div>
-        <div class="grid grid-flow-row grid-cols-12 gap-6">
-
-            <div class="col-span-12 text-center py-2">
-                <button
-                    class="border-blue-800 border-2 px-3 py-1 rounded text-blue-800 hover:text-white hover:bg-blue-800 mx-auto"
-                    wire:click="loadMore">Load
-                    More</button>
+        @if (!$maxArtikel)
+            <div class="grid grid-flow-row grid-cols-12 gap-6">
+                <div class="col-span-12 text-center py-2">
+                    <button
+                        class="border-blue-800 border-2 px-3 py-1 rounded text-blue-800 hover:text-white hover:bg-blue-800 mx-auto"
+                        wire:click="loadMore">Load
+                        More</button>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 </div>

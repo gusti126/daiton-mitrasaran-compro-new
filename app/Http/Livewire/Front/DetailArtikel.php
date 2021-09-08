@@ -10,12 +10,17 @@ use Livewire\Component;
 class DetailArtikel extends Component
 {
     public $artikel;
-    public $komentar_nama, $komentar_email, $komentar_body;
+    public $komentar_nama, $komentar_email, $komentar_body, $isfullImgHeader;
     public function mount($slug)
     {
         $this->artikel = Artikel::where('slug', $slug)->with(['image' => function ($query) {
             $query->limit(2)->get();
         }])->with('komentar.reply')->first();
+
+        // dd($this->artikel->image->count() < 2);
+        if ($this->artikel->image->count() < 2) {
+            $this->isfullImgHeader = true;
+        }
     }
     public function render()
     {

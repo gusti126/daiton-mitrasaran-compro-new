@@ -24,7 +24,7 @@
         <div class="md:flex block justify-center items-center" v-bind:class="{'hidden': !showMenu, 'block': showMenu}">
             <div
                 class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-800 hover:opacity-75">
-                <a href="" class="text-sm uppercase font-bold">Home</a>
+                <a href="/" class="text-sm uppercase font-bold">Home</a>
             </div>
             <div
                 class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-800 hover:opacity-75">

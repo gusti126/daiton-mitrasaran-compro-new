@@ -17,7 +17,8 @@
                 berdiri sejak 1994. 200+ mitra
             </div>
             <div class="text-center mt-6">
-                <a href="" class="bg-blue-500 text-white mx-auto px-4 py-2 rounded hover:bg-purple-500">Find Now</a>
+                <a href="#scrollspyHeading1"
+                    class="bg-blue-500 text-white mx-auto px-4 py-2 rounded hover:bg-purple-500">Find Now</a>
             </div>
         </div>
     </div>
@@ -25,7 +26,7 @@
 
     {{-- statistik --}}
     {{-- dekstop view --}}
-    <div class="-mt-16 z-10 container absolute hidden md:block">
+    <div class="-mt-16 z-10 container absolute hidden md:block" id="scrollspyHeading1">
         <div class=" grid grid-cols-1 gap-2 place-items-center">
             <div>
                 <div class="bg-white p-6 rounded-lg mx-auto shadow-md md:flex">
@@ -196,91 +197,97 @@
     </div>
     {{-- endartikel --}}
 
-
-    <div class="md:px-20 px-4 mt-10">
-        <div class="grid grid-flow-row grid-cols-12 gap-6">
-            <div class="col-span-12 md:col-span-6 hidden md:block">
-                <div class="grid grid-flow-row grid-cols-12 gap-6">
-                    <div class="col-span-6 ">
-                        <div class="bg-blue-100 p-4 rounded-lg border">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <div class="text-blue-600 font-bold text-2xl">Alamat</div>
-                            <div class="text-gray-600 text-xs">Jl. Arcadia, Jl. Daan Mogot Blok G18 No 1-3 Km,
-                                RT.005/RW.003,
-                                Batuceper, Kec.
-                                Batuceper, Kota Tangerang, Banten 15122</div>
+    {{-- pesan --}}
+    <form action="{{ route('create-pesan') }}" method="POST">
+        @csrf
+        <div class="md:px-20 px-4 mt-10">
+            <div class="grid grid-flow-row grid-cols-12 gap-6">
+                <div class="col-span-12 md:col-span-6 hidden md:block">
+                    <div class="grid grid-flow-row grid-cols-12 gap-6">
+                        <div class="col-span-6 ">
+                            <div class="bg-blue-100 p-4 rounded-lg border">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <div class="text-blue-600 font-bold text-2xl">Alamat</div>
+                                <div class="text-gray-600 text-xs">Jl. Arcadia, Jl. Daan Mogot Blok G18 No 1-3 Km,
+                                    RT.005/RW.003,
+                                    Batuceper, Kec.
+                                    Batuceper, Kota Tangerang, Banten 15122</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-span-6 h-full">
-                        <div class="bg-blue-100 p-4 rounded-lg border h-full">
-                            {{-- telepon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
-                            </svg>
-                            <div class="text-blue-600 font-bold text-2xl">Hubungi kami</div>
-                            <div class="text-gray-600 text-xs">
-                                021 - 2208 - 1996 <br>
-                                081 - 7707 - 2231
+                        <div class="col-span-6 h-full">
+                            <div class="bg-blue-100 p-4 rounded-lg border h-full">
+                                {{-- telepon --}}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
+                                </svg>
+                                <div class="text-blue-600 font-bold text-2xl">Hubungi kami</div>
+                                <div class="text-gray-600 text-xs">
+                                    021 - 2208 - 1996 <br>
+                                    081 - 7707 - 2231
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-6 ">
+                            <div class="bg-blue-100 p-4 rounded-lg border">
+                                {{-- email --}}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <div class="text-blue-600 font-bold text-2xl">Email</div>
+                                <div class="text-gray-600 text-xs">
+                                    hub@daitonmitrasarana.co.id <br>
+                                    cs@daitonmitrasarana.co.id
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-6 ">
+                            <div class="bg-blue-100 p-4 rounded-lg border">
+                                {{-- jam --}}
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <div class="text-blue-600 font-bold text-2xl">Jam Kerja</div>
+                                <div class="text-gray-600 text-xs">
+                                    Senin - Sabtu <br>
+                                    08.00 - 17.00 wib
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-6 ">
-                        <div class="bg-blue-100 p-4 rounded-lg border">
-                            {{-- email --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <div class="text-blue-600 font-bold text-2xl">Email</div>
-                            <div class="text-gray-600 text-xs">
-                                hub@daitonmitrasarana.co.id <br>
-                                cs@daitonmitrasarana.co.id
-                            </div>
-                        </div>
+                </div>
+                <div class="col-span-12 md:col-span-6  border p-6 bg-blue-400 rounded">
+                    <div>
+                        <input type="text" placeholder="Masukan Nama" name="nama"
+                            class="rounded w-full border border-gray-400 py-2 bg-gray-100">
                     </div>
-                    <div class="col-span-6 ">
-                        <div class="bg-blue-100 p-4 rounded-lg border">
-                            {{-- jam --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div class="text-blue-600 font-bold text-2xl">Jam Kerja</div>
-                            <div class="text-gray-600 text-xs">
-                                Senin - Sabtu <br>
-                                08.00 - 17.00 wib
-                            </div>
-                        </div>
+                    <div>
+                        <input type="text" placeholder="Masukan Email" name="email"
+                            class="mt-8 rounded w-full border border-gray-400 py-2 bg-gray-100">
                     </div>
-                </div>
-            </div>
-            <div class="col-span-12 md:col-span-6  border p-6 bg-blue-400 rounded">
-                <div>
-                    <input type="text" placeholder="Masukan Nama"
-                        class="rounded w-full border border-gray-400 py-2 bg-gray-100">
-                </div>
-                <div>
-                    <input type="text" placeholder="Masukan Email"
-                        class="mt-8 rounded w-full border border-gray-400 py-2 bg-gray-100">
-                </div>
-                <div>
-                    <textarea type="text" placeholder="Masukan Pesan"
-                        class="mt-8 rounded w-full border border-gray-400 py-2 text-gray-800 bg-gray-100 h-32"> </textarea>
-                </div>
-                <div class="bg-blue-600 mt-8 cursor-pointer hover:bg-purple-500 text-white py-2 rounded text-center">
-                    Kirim Pesan
+                    <div>
+                        <textarea type="text" placeholder="Masukan Pesan" name="body"
+                            class="mt-8 rounded w-full border border-gray-400 py-2 text-gray-800 bg-gray-100 h-32"> </textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-600 mt-8 block w-full cursor-pointer hover:bg-purple-500 text-white py-2 rounded text-center">
+                        Kirim Pesan
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
+    {{-- pesan --}}
+
 </div>

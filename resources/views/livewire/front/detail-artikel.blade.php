@@ -13,27 +13,38 @@
 
             <div class="text-center text-white text-lg font-semibold">{{ $item->title }}</div>
         </div>
+
     </div>
     {{-- endheader --}}
     {{-- image --}}
-    <div class="px-4 md:px-20  -mt-20" id="app">
-        <div class="grid grid-flow-row grid-cols-12 gap-2 md:gap-4">
-            <div class="md:col-span-7 col-span-12 ">
-                <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="" class="w-full rounded">
-
-            </div>
-            <div class=" col-span-12 md:col-span-5">
-                <div class="grid grid-flow-row grid-cols-12 gap-2 md:gap-4">
-                    @foreach ($item->image as $image)
-                        <div class="col-span-6 md:col-span-12">
-                            <img src="{{ asset('storage/' . $image->image) }}" alt=""
-                                class="w-full rounded object-cover h-52 cursor-pointer border-2 border-transparent hover:border-gray-500">
-                        </div>
-                    @endforeach
+    @if ($isfullImgHeader)
+        <div class="px-4 md:px-20  -mt-20" id="app">
+            <div class="grid grid-flow-row grid-cols-12 gap-2 md:gap-4">
+                <div class="md:col-span-12">
+                    <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="" class="w-full rounded">
                 </div>
             </div>
         </div>
-    </div>
+    @else
+        <div class="px-4 md:px-20  -mt-20" id="app">
+            <div class="grid grid-flow-row grid-cols-12 gap-2 md:gap-4">
+                <div class="md:col-span-7 col-span-12 ">
+                    <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="" class="w-full rounded">
+                </div>
+                <div class=" col-span-12 md:col-span-5">
+                    <div class="grid grid-flow-row grid-cols-12 gap-2 md:gap-4">
+                        @foreach ($item->image as $image)
+                            <div class="col-span-6 md:col-span-12">
+                                <img src="{{ asset('storage/' . $image->image) }}" alt=""
+                                    class="w-full rounded object-cover h-52 cursor-pointer border-2 border-transparent hover:border-gray-500">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    @endif
     {{-- endimage --}}
 
     {{-- deskripsi --}}

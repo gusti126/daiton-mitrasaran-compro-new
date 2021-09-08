@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\Admin\ArtikelController;
+use App\Http\Controllers\Admin\PesanController;
 use App\Http\Livewire\Admin\Artikel;
 use App\Http\Livewire\Admin\ArtikelCreate;
 use App\Http\Livewire\Admin\ArtikelEdit;
 use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\DetailArtikel;
+use App\Http\Livewire\Admin\Pesan;
 use App\Http\Livewire\Admin\User;
 use App\Http\Livewire\Front\Artikel as FrontArtikel;
 use App\Http\Livewire\Front\DetailArtikel as FrontDetailArtikel;
@@ -44,3 +46,8 @@ Route::get('/admin/user', User::class)->name('livewire-user')->middleware('auth'
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::post('pesan/create', [PesanController::class, 'create'])->name('create-pesan');
+
+// admin pesan
+Route::get('admin/pesan', Pesan::class)->name('livewire-pesan')->middleware('auth', 'admin');

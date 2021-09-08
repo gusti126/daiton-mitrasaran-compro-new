@@ -63,7 +63,7 @@ class ArtikelController extends Controller
         $artikel = Artikel::where('slug', $slug)->first();
         $artikel->update($data);
 
-        Alert::success('Berhasil update artikel');
+        Alert::success('Berhasil Kirim Pesan', 'pesan anda telah kami terima selanjutnya akan kami balas via email');
         return redirect()->route('admin-livewire-artikel');
     }
 }
