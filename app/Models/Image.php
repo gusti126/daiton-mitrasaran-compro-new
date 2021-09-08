@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class Image extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'nama'
+        'artikel_id', 'image'
     ];
 
     public function artikel()
     {
-        return $this->hasMany('App\Models\Artikel');
+        return $this->belongsTo('App\Models\Artikel');
     }
 }

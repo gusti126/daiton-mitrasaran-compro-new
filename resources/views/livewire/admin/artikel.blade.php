@@ -1,10 +1,9 @@
-<div>
+<div class="bg-white p-4">
     @section('title')
         Artikel
     @endsection
 
-    <div class="flex justify-between">
-
+    <div class="flex justify-between mb-6">
         <div class="___class_+?1___">
             <a href="{{ route('admin-livewire-artikel-create') }}"
                 class="bg-blue-700 px-4 py-1 rounded flex text-white">
@@ -17,7 +16,7 @@
     </div>
 
     @forelse ($artikel as $item)
-        <div class="flex items-stretch  mb-4 p-4 bg-white rounded">
+        <div class="flex items-stretch  mb-4  bg-white rounded mt-2">
             <img src="{{ asset('/storage/' . $item->thumbnail) }}" alt="" class="rounded h-20 mr-6">
             <div class="w-full">
                 <div class="font-extrabold">{{ $item->title }}</div>

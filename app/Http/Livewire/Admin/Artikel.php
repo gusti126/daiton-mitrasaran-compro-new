@@ -17,7 +17,7 @@ class Artikel extends Component
 
     public function render()
     {
-        $artikel = ModelsArtikel::limit($this->limitDb)->limit($this->limitDb)->get();
+        $artikel = ModelsArtikel::limit($this->limitDb)->orderBy('id', 'desc')->get();
         if ($this->keyword !== null) {
             $artikel = ModelsArtikel::where('title', 'like', '%' . $this->keyword . '%')->get();
         }

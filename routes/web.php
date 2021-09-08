@@ -7,6 +7,9 @@ use App\Http\Livewire\Admin\ArtikelEdit;
 use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\DetailArtikel;
 use App\Http\Livewire\Admin\User;
+use App\Http\Livewire\Front\Artikel as FrontArtikel;
+use App\Http\Livewire\Front\DetailArtikel as FrontDetailArtikel;
+use App\Http\Livewire\Front\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,14 +22,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
 // Route::get('/admin', function () {
 //     return view('layouts.admin');
 // })->middleware('admin');
 
+Route::get('/', Index::class)->name('home-livewire');
+Route::get('detail/artikel/{slug}', FrontDetailArtikel::class)->name('detail-artikel');
+Route::get('artikel', FrontArtikel::class)->name('artikel-forntend');
 Route::get('admin', Dashboard::class)->name('livewire-dashboard');
 
 Route::get('/admin/artikel', Artikel::class)->name('admin-livewire-artikel')->middleware('auth', 'admin');

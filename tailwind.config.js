@@ -14,6 +14,13 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: (theme) => ({
+                'imgHead': "url('/gambar/Rectangle 1.png')",
+                'coach': "url('/gambar/executive-coaching.jpg')",
+                }),
+            minHeight:{
+                'highHeader': '500px'
+            },
         },
     },
 
