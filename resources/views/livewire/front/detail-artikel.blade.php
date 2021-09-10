@@ -18,7 +18,7 @@
     {{-- endheader --}}
     {{-- image --}}
     @if ($isfullImgHeader)
-        <div class="px-4 md:px-20  -mt-20" id="app">
+        <div class="container md:px-20  -mt-20" id="app">
             <div class="grid grid-flow-row grid-cols-12 gap-2 md:gap-4">
                 <div class="md:col-span-12">
                     <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="" class="w-full rounded">
@@ -26,7 +26,7 @@
             </div>
         </div>
     @else
-        <div class="px-4 md:px-20  -mt-20" id="app">
+        <div class=" md:px-20  -mt-20" id="app">
             <div class="grid grid-flow-row grid-cols-12 gap-2 md:gap-4">
                 <div class="md:col-span-7 col-span-12 ">
                     <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="" class="w-full rounded">
