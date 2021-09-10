@@ -41,6 +41,7 @@
             </footer>
         </div>
     </div>
+    @yield('test-aja-modal')
     @stack('script')
     @include('sweetalert::alert')
     @include('includes.dashboard.script-bottom')

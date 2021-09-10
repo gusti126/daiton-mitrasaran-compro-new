@@ -9,21 +9,22 @@ use Livewire\Component;
 
 class DetailArtikel extends Component
 {
-    public $artikel;
+    public $artikel, $slug;
     public $komentar_nama, $komentar_email, $komentar_body, $isfullImgHeader;
     public function mount($slug)
     {
-        $this->artikel = Artikel::where('slug', $slug)->with(['image' => function ($query) {
-            $query->limit(2)->get();
-        }])->with('komentar.reply')->first();
-
-        // dd($this->artikel->image->count() < 2);
-        if ($this->artikel->image->count() < 2) {
-            $this->isfullImgHeader = true;
-        }
+        $this->slug = $slug;
     }
     public function render()
     {
+        $this->artikel = Artikel::where('slug', $this->slug)->with(['image' => function ($query) {
+            $query->limit(2)->get();
+        }])->with('komentar')->first();
+
+        dd($this->artikel->komentar);
+        if ($this->artikel->image->count() < 2) {
+            $this->isfullImgHeader = true;
+        }
         $byKategori = Kategori::where('id', $this->artikel->kategori_id)->with('artikel')->first();
         // dd($byKategori);
         return view('livewire.front.detail-artikel', [

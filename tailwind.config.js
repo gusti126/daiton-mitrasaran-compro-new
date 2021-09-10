@@ -16,6 +16,7 @@ module.exports = {
             },
             backgroundImage: (theme) => ({
                 'imgHead': "url('/gambar/Rectangle 1.png')",
+                'imgAbout': "url('/gambar/Vector 1.png')",
                 'coach': "url('/gambar/executive-coaching.jpg')",
                 }),
             minHeight:{

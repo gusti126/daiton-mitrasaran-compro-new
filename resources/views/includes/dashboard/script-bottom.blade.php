@@ -14,6 +14,7 @@ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07j
 <!-- Template JS File -->
 <script src="{{ asset('stisla/assets/js/scripts.js') }}"></script>
 <script src="{{ asset('stisla/assets/js/custom.js') }}"></script>
-
+<!-- Scripts -->
+<script src="{{ mix('js/app.js') }}" defer></script>
 <!-- Page Specific JS File -->
 @livewireScripts

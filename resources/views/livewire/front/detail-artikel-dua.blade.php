@@ -1,7 +1,8 @@
+@extends('layouts.front')
+@section('title')
+    {{ $item->title }}
+@endsection
 <div>
-    @section('title')
-        {{ $item->title }}
-    @endsection
     {{-- header --}}
     <div class="bg-gray-800 h-64">
         <div class="md:px-20 ">
@@ -81,14 +82,35 @@
     <div class="md:px-20 px-4 mt-6">
         <div class="font-semibold">Komentar</div>
         <div class="grid grid-flow-row grid-cols-12 bg-gray-200 px-2 md:p-4 mt-4">
-            @forelse ($item->komentar as $k)
+            @forelse ($item->komentar as $komentar)
                 <div class="col-span-1 mx-auto">
-                    <img src="https://source.unsplash.com/random/100x100?sig={{ $k->id }}" alt="image"
+                    <img src="https://source.unsplash.com/random/100x100?sig={{ $komentar->id }}" alt="image"
                         class="rounded-full border border-white md:h-12">
                 </div>
-                <div class="ml-2 font-semibold col-span-11">{{ $k->nama }}
-                    <div class="font-light text-sm">{{ $k->body }}
+                <div class="ml-2 font-semibold col-span-11">{{ $komentar->nama }}
+                    <div class="font-light text-sm">{{ $komentar->body }}
                     </div>
+
+                    <div class="grid grid-flow-row grid-cols-12 bg-gray-200 p-4 mt-4">
+                        @forelse ($komentar->reply as $balasan)
+                            <div class="col-span-12 mt-4">
+                                <div class="grid grid-flow-row grid-cols-12">
+                                    <div class="col-span-1 mx-auto">
+                                        <img src="https://source.unsplash.com/random/100x100?sig={{ $balasan->id }}"
+                                            alt="image" class="rounded-full border border-white md:h-12">
+                                    </div>
+                                    <div class="ml-2 font-semibold col-span-10">Admin Daiton Mitrasaran
+                                        <div class="font-light text-sm">{{ $balasan->body }}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                            <div></div>
+                        @endforelse
+                    </div>
+
                 </div>
             @empty
                 <div class="text-gray-900 text-lg  col-span-12 text-center">Tidak ada komantar</div>

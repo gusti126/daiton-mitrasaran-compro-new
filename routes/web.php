@@ -9,6 +9,7 @@ use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\DetailArtikel;
 use App\Http\Livewire\Admin\Pesan;
 use App\Http\Livewire\Admin\User;
+use App\Http\Livewire\Front\About;
 use App\Http\Livewire\Front\Artikel as FrontArtikel;
 use App\Http\Livewire\Front\DetailArtikel as FrontDetailArtikel;
 use App\Http\Livewire\Front\Index;
@@ -29,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('admin');
 
 Route::get('/', Index::class)->name('home-livewire');
+Route::get('about', About::class)->name('about');
 Route::get('detail/artikel/{slug}', FrontDetailArtikel::class)->name('detail-artikel');
 Route::get('artikel', FrontArtikel::class)->name('artikel-forntend');
 Route::get('admin', Dashboard::class)->name('livewire-dashboard');
