@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport" />
     <title>@yield('title')</title>
+    @include('includes.dashboard.header')
 </head>
-@include('includes.dashboard.header')
 
 <body>
     <div id="app">
@@ -41,7 +41,7 @@
             </footer>
         </div>
     </div>
-    @yield('test-aja-modal')
+    @stack('test-aja-modal')
     @stack('script')
     @include('sweetalert::alert')
     @include('includes.dashboard.script-bottom')

@@ -9,11 +9,14 @@ class User extends Component
 {
     public $limit = 6;
     public $confirmId, $keyword;
+    public $userModal, $userId;
+
+
     public function render()
     {
         $data = ModelsUser::limit($this->limit)->get();
-        if($this->keyword !== null){
-            $data  = ModelsUser::where('name', 'like', '%'.$this->keyword.'%')->orWhere('email', 'like', '%' . $this->keyword . '%')->get();
+        if ($this->keyword !== null) {
+            $data  = ModelsUser::where('name', 'like', '%' . $this->keyword . '%')->orWhere('email', 'like', '%' . $this->keyword . '%')->get();
         }
         return view('livewire.admin.user', [
             'users' => $data,
@@ -49,5 +52,23 @@ class User extends Component
     public function hapusNo()
     {
         $this->confirmId = 0;
+    }
+
+    public function showModal($id)
+    {
+
+        $this->userId = $id;
+
+        $user = ModelsUser::find($id);
+        // $this->userModal = $user;
+        $this->userModal['name'] = $user->name;
+        // dd($this->userModal);
+        // dd($this->userModal->name);
+        $this->dispatchBrowserEvent('modalShow', $this->userModal);
+    }
+
+    public function hiddenModal()
+    {
+        $this->userId = 0;
     }
 }

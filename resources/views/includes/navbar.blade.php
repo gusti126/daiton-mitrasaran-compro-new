@@ -28,7 +28,7 @@
             </div>
             <div
                 class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-800 hover:opacity-75">
-                <a href="" class="text-sm uppercase font-bold">About</a>
+                <a href="{{ route('about') }}" class="text-sm uppercase font-bold">About</a>
             </div>
             <div
                 class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-800 hover:opacity-75">
@@ -36,7 +36,7 @@
             </div>
             <div
                 class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-800 hover:opacity-75">
-                <a href="" class="text-sm uppercase font-bold">Kontak</a>
+                <a href="{{ route('kontak-front') }}" class="text-sm uppercase font-bold">Kontak</a>
             </div>
         </div>
 

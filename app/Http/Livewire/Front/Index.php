@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Front;
 
 use App\Models\Artikel;
+use App\Models\HomeWebmaster;
 use App\Models\Kategori;
 use Livewire\Component;
 
@@ -25,10 +26,13 @@ class Index extends Component
             $query->limit(3)->get();
         })->first();
 
+        $webmaster = HomeWebmaster::orderBy('id')->first();
+
         return view('livewire.front.index', [
             'satu' => $artikel1,
             'dua' => $artikel2,
-            'byKategori' => $byKategori
+            'byKategori' => $byKategori,
+            'webmaster' => $webmaster
         ])->extends('layouts.front')->section("content");
     }
 

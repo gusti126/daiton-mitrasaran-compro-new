@@ -13,8 +13,8 @@
             <div class="text-white font-bold text-5xl text-center mt-12">DAITON <span class="text-blue-500">MITRA</span>
                 SARANA</div>
             <div class="md:mt-12 mt-6 text-white text-center font-medium text-lg md:text-3xl">
-                Mitra sarana <span class="text-blue-500 font-semibold">terbaik di Indonesia</span> <br>
-                berdiri sejak 1994. 200+ mitra
+
+                {!! $webmaster->header_subtitle !!}
             </div>
             <div class="text-center mt-6">
                 <a href="#scrollspyHeading1"
@@ -214,10 +214,9 @@
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                                 <div class="text-blue-600 font-bold text-2xl">Alamat</div>
-                                <div class="text-gray-600 text-xs">Jl. Arcadia, Jl. Daan Mogot Blok G18 No 1-3 Km,
-                                    RT.005/RW.003,
-                                    Batuceper, Kec.
-                                    Batuceper, Kota Tangerang, Banten 15122</div>
+                                <div class="text-gray-600 text-xs">
+                                    {!! $webmaster->alamat !!}
+                                </div>
                             </div>
                         </div>
                         <div class="col-span-6 h-full">
@@ -230,8 +229,7 @@
                                 </svg>
                                 <div class="text-blue-600 font-bold text-2xl">Hubungi kami</div>
                                 <div class="text-gray-600 text-xs">
-                                    021 - 2208 - 1996 <br>
-                                    081 - 7707 - 2231
+                                    {!! $webmaster->kontak !!}
                                 </div>
                             </div>
                         </div>
@@ -245,8 +243,7 @@
                                 </svg>
                                 <div class="text-blue-600 font-bold text-2xl">Email</div>
                                 <div class="text-gray-600 text-xs">
-                                    hub@daitonmitrasarana.co.id <br>
-                                    cs@daitonmitrasarana.co.id
+                                    {!! $webmaster->email !!}
                                 </div>
                             </div>
                         </div>
