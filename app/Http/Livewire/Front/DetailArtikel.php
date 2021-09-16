@@ -20,8 +20,9 @@ class DetailArtikel extends Component
         $this->artikel = Artikel::where('slug', $this->slug)->with(['image' => function ($query) {
             $query->limit(2)->get();
         }])->with('komentar')->first();
-
-        dd($this->artikel->komentar);
+        visitor()->visit($this->artikel); // create a visit log
+        // dd($this->artikel->komentar);
+        visitor()->visit($this->artikel);
         if ($this->artikel->image->count() < 2) {
             $this->isfullImgHeader = true;
         }

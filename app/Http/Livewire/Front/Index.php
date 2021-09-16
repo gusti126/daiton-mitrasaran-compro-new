@@ -20,6 +20,7 @@ class Index extends Component
 
     public function render()
     {
+
         $artikel1 = Artikel::orderBy('id', 'desc')->first();
         $artikel2 = Artikel::orderBy('id', 'desc')->limit(4)->get();
         $byKategori = Kategori::where('nama', 'Corporate Coaching')->with('artikel', function ($query) {
@@ -27,7 +28,7 @@ class Index extends Component
         })->first();
 
         $webmaster = HomeWebmaster::orderBy('id')->first();
-
+        visitor()->visit(); // create a visit log
         return view('livewire.front.index', [
             'satu' => $artikel1,
             'dua' => $artikel2,
