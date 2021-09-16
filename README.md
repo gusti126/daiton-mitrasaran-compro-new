@@ -49,8 +49,3 @@ php artisan serve
 ```bash
 npm run watch
 ```
-
-## on progress
-
-1. authentication
-2. frontend into dynamic data
