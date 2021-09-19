@@ -11,6 +11,16 @@ class Artikel extends Component
     public $artikel, $limit = 4;
     public $keyword = '';
     public $maxArtikel = false;
+    public $kategoriId;
+    public $isBykategori = false;
+
+    protected $listeners = [
+        'artikelByKategori'
+    ];
+
+    public function artikelByKategori()
+    {
+    }
 
 
     public function render()
@@ -24,15 +34,29 @@ class Artikel extends Component
             $this->artikel = ModelsArtikel::where('title', 'like', "%" . $this->keyword . "%")->get();
         }
         if (strlen($this->keyword) < 3) {
-            $allARtikel = ModelsArtikel::limit($this->limit)->get();
-            $this->artikel = $allARtikel;
+            if (!$this->isBykategori) {
+                $allARtikel = ModelsArtikel::limit($this->limit)->get();
+                $this->artikel = $allARtikel;
+            }
         }
+
 
         return view('livewire.front.artikel', [
             'datahead' => $datahead,
             'artikel' => $this->artikel,
             'kategoriAll' => $kategori,
         ])->extends('layouts.front')->section('content');
+    }
+    public function byKategori($id)
+    {
+        if ($id < 1) {
+            $this->isBykategori = false;
+        } else {
+            $this->artikel = ModelsArtikel::where('kategori_id', $id)->limit($this->limit)->get();
+            // dd($this->artikel);
+            $this->emit('artikelByKategori');
+            $this->isBykategori = true;
+        }
     }
     public function loadMore()
     {

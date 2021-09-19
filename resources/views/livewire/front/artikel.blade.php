@@ -29,6 +29,10 @@
     </div>
     <div class="bg-gray-100 px-4 md:px-20  md:py-4 pt-4 md:flex justify-between">
         <div class="hidden md:flex justify-between">
+            <button class="mr-8 font-semibold underline cursor-pointer"
+                wire:click.prevent="byKategori({{ 0 }})">
+                Semua
+            </button>
             @foreach ($kategoriAll as $item)
                 <button class="mr-8 font-semibold underline cursor-pointer"
                     wire:click.prevent="byKategori({{ $item->id }})">
@@ -37,8 +41,8 @@
             @endforeach
         </div>
         <div>
-            <input type="text" class="px-2 py-1 border border-gray-500 rounded-full" placeholder="cari artikel ... "
-                wire:model="keyword">
+            <input type="text" class="px-2 py-1 border border-gray-500 rounded-full"
+                placeholder="cari judul artikel ... " wire:model="keyword">
         </div>
     </div>
 
