@@ -28,8 +28,23 @@
                     <td>
                         <div class="badge badge-success">{{ $item->role }}</div>
                     </td>
-                    <td><button type="submit" class="bg-blue-700 text-white px-2 py-1 rounded" data-toggle="modal"
-                            id="testModal" wire:click="showModal({{ $item->id }})">Detail</button></td>
+                    <td>
+                        @if ($confirmId === $item->id)
+
+                            <button type="submit" class="bg-red-700 text-white px-2 py-1 rounded" data-toggle="modal"
+                                id="testModal" wire:click="hapus({{ $item->id }})">ya</button>
+                            <button type="submit" class="bg-blue-700 text-white px-2 py-1 rounded" data-toggle="modal"
+                                id="testModal" wire:click="hapusNo({{ $item->id }})">no</button>
+
+                        @else
+                            <button type="submit" class="bg-blue-700 text-white px-2 py-1 rounded" data-toggle="modal"
+                                id="testModal" wire:click="setAdmin({{ $item->id }})">set admin</button>
+                            {{--  --}}
+                            <button type="submit" class="bg-red-700 text-white px-2 py-1 rounded" data-toggle="modal"
+                                id="testModal" wire:click="confirmDelet({{ $item->id }})">hapus</button>
+                        @endif
+                    </td>
+
                 </tr>
 
             @endforeach

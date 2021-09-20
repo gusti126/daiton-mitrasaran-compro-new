@@ -14,7 +14,7 @@ class User extends Component
 
     public function render()
     {
-        $data = ModelsUser::limit($this->limit)->get();
+        $data = ModelsUser::orderBy('role', 'asc')->limit($this->limit)->get();
         if ($this->keyword !== null) {
             $data  = ModelsUser::where('name', 'like', '%' . $this->keyword . '%')->orWhere('email', 'like', '%' . $this->keyword . '%')->get();
         }
@@ -65,6 +65,41 @@ class User extends Component
         // dd($this->userModal);
         // dd($this->userModal->name);
         $this->dispatchBrowserEvent('modalShow', $this->userModal);
+    }
+
+    public function setUser($id)
+    {
+        $user = ModelsUser::find($id);
+        $user->role = 'user';
+
+        $user->save();
+
+        $this->dispatchBrowserEvent('swal', [
+            'title' => 'ubah jadi level user berhasil',
+            'timer' => 4000,
+            'icon' => 'success',
+            'toast' => true,
+            'position' => 'top-right',
+            'showCancelButton' => false, // There won't be any cancel button
+            'showConfirmButton' =>  false // There won't be any confirm button
+        ]);
+    }
+    public function setAdmin($id)
+    {
+        $user = ModelsUser::find($id);
+        $user->role = 'admin';
+
+        $user->save();
+
+        $this->dispatchBrowserEvent('swal', [
+            'title' => 'ubah jadi level user berhasil',
+            'timer' => 4000,
+            'icon' => 'success',
+            'toast' => true,
+            'position' => 'top-right',
+            'showCancelButton' => false, // There won't be any cancel button
+            'showConfirmButton' =>  false // There won't be any confirm button
+        ]);
     }
 
     public function hiddenModal()

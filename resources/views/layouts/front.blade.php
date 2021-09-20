@@ -57,6 +57,18 @@
     </div>
 
     @stack('script')
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W23CZTJKV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3W23CZTJKV');
+    </script>
     @include('sweetalert::alert')
     <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- Page Specific JS File -->
