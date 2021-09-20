@@ -29,7 +29,12 @@ class AllSeeder extends Seeder
         Kategori::create([
             'nama' => 'Our Coaching'
         ]);
-
+        User::create([
+            'name' => 'admin',
+            'email' => 'admin@daitonmitrasarana.co.id',
+            'password' => Hash::make("admin2021"),
+            'role' => 'superAdmin'
+        ]);
         for ($i = 0; $i < 10; $i++) {
             User::create([
                 'name' => $faker->name,
