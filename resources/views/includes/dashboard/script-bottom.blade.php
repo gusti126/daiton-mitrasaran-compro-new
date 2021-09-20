@@ -7,13 +7,13 @@ integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0
 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="{{ asset('stisla/assets/js/stisla.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/stisla.js') }}"></script>
 
 <!-- JS Libraies -->
 
 <!-- Template JS File -->
-<script src="{{ asset('stisla/assets/js/scripts.js') }}"></script>
-<script src="{{ asset('stisla/assets/js/custom.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/scripts.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/custom.js') }}"></script>
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}" defer></script>
 <!-- Page Specific JS File -->

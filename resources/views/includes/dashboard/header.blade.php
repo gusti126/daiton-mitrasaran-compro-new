@@ -7,7 +7,7 @@
  <!-- CSS Libraries -->
 
  <!-- Template CSS -->
- <link rel="stylesheet" href="{{ asset('stisla/assets/css/style.css') }}">
+ <link rel="stylesheet" href="{{ asset('dashboard/assets/css/style.css') }}">
  <link rel="stylesheet" href="../assets/css/components.css">
 
  <!-- Fonts -->
@@ -17,5 +17,3 @@
  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
  @livewireStyles
-
-
