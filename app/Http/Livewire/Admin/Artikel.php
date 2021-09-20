@@ -13,11 +13,12 @@ class Artikel extends Component
     public $isTambah = false;
     public $image, $kategoriId, $title, $confirmId, $body;
     public $limitDb = 6;
-    public $keyword;
+    public $keyword, $artikelId;
 
     public function render()
     {
-        $artikel = ModelsArtikel::limit($this->limitDb)->orderBy('id', 'desc')->get();
+        $artikel = ModelsArtikel::limit($this->limitDb)->orderBy('id', 'desc')->with('komentar')->get();
+        // dd($artikel);
         if ($this->keyword !== null) {
             $artikel = ModelsArtikel::where('title', 'like', '%' . $this->keyword . '%')->get();
         }
@@ -58,5 +59,11 @@ class Artikel extends Component
     public function confirmDelet($id)
     {
         $this->confirmId = $id;
+    }
+
+    public function showKomentar($id)
+    {
+        $this->artikelId = $id;
+        // dd('hello');
     }
 }

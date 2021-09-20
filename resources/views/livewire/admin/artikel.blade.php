@@ -26,8 +26,9 @@
                         <div class="mr-4">
                             <i class="far fa-eye"></i> <span>{{ number_format(30000) }}</span>
                         </div>
-                        <div class="mr-4">
-                            <i class="far fa-comments"></i> <span>{{ number_format(380) }}</span>
+                        <div class="mr-4 cursor-pointer" wire:click="showKomentar({{ $item->id }})">
+                            <i class="far fa-comments"></i>
+                            <span>{{ number_format(App\Models\Komentar::where('artikel_id', $item->id)->count()) }}</span>
                         </div>
                     </div>
                     <div class="flex">
@@ -67,11 +68,21 @@
                 </div>
             </div>
         </div>
+        @if ($artikelId === $item->id)
+            @foreach ($item->komentar as $komen)
+                <div class="md:px-10 pb-8">
+                    <div class="font-bold">{{ $komen->nama }}</div>
+                    <div>{{ $komen->body }}</div>
+                </div>
+
+            @endforeach
+        @endif
     @empty
         <div class="col-span-12 text-center font-semibold text-2xl">
             Tidak ada data
         </div>
     @endforelse
+
 
 
 </div>
