@@ -56,9 +56,10 @@
 
 
     @stack('test-aja-modal')
-    @stack('script')
     @include('sweetalert::alert')
     @include('includes.dashboard.script-bottom')
+    @stack('script')
+    @livewireChartsScripts
 </body>
 
 </html>

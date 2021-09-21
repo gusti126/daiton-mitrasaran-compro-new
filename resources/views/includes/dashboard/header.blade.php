@@ -8,7 +8,7 @@
 
  <!-- Template CSS -->
  <link rel="stylesheet" href="{{ asset('dashboard/assets/css/style.css') }}">
- <link rel="stylesheet" href="../assets/css/components.css">
+ <link rel="stylesheet" href="{{ asset('dashboard/assets/css/components.css') }}">
 
  <!-- Fonts -->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">

@@ -50,4 +50,28 @@
             </div>
         </div>
     </div>
+    <div class="grid grid-flow-row grid-cols-12 gap-4">
+        <div class="col-span-6">
+            <div style="height: 400px;">
+                <livewire:livewire-line-chart :line-chart-model="$lineChart" />
+            </div>
+        </div>
+        <div class="col-span-6">
+            <div style="height: 400px;">
+                <livewire:livewire-pie-chart :pie-chart-model="$pieChart" />
+            </div>
+        </div>
+        <div class="col-span-6">
+            <div style="height: 400px;">
+                <livewire:livewire-column-chart :column-chart-model="$columnChartModel" />
+            </div>
+        </div>
+    </div>
+
+
+
+
 </div>
+@push('script')
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+@endpush
