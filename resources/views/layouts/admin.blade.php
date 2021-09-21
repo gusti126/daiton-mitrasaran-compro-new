@@ -4,19 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport" />
+
     <title>@yield('title')</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W23CZTJKV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-3W23CZTJKV');
-    </script>
     @include('includes.dashboard.header')
 </head>
 
@@ -51,8 +40,9 @@
             </footer>
         </div>
     </div>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W23CZTJKV"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-208064306-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -61,8 +51,10 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-3W23CZTJKV');
+        gtag('config', 'UA-208064306-1');
     </script>
+
+
     @stack('test-aja-modal')
     @stack('script')
     @include('sweetalert::alert')
