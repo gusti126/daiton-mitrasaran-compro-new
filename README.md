@@ -49,3 +49,5 @@ php artisan serve
 ```bash
 npm run watch
 ```
+
+### silahkan atur terlebih dahulu web modulnya di sisi admin
