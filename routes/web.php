@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\ArtikelCreate;
 use App\Http\Livewire\Admin\ArtikelEdit;
 use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\DetailArtikel;
+use App\Http\Livewire\Admin\KategoriLivewire;
 use App\Http\Livewire\Admin\Kontak;
 use App\Http\Livewire\Admin\Pesan;
 use App\Http\Livewire\Admin\User;
@@ -68,3 +69,5 @@ Route::put('admin/webmaster/about/{id}', [AboutController::class, 'update'])->na
 
 Route::get('admin/webmaster/kontak', [KontakController::class, 'index'])->name('webmaster-kontak')->middleware('auth', 'admin');
 Route::put('admin/webmaster/kontak/update/{id}', [KontakController::class, 'update'])->name('webmaster-kontak-update')->middleware('auth', 'admin');
+
+Route::get('admin/kategori', KategoriLivewire::class)->name('livewire-kategori');

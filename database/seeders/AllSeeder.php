@@ -20,15 +20,15 @@ class AllSeeder extends Seeder
 
         $faker = Faker::create('id_ID');
 
-        // Kategori::create([
-        //     'nama' => 'Corporate Coaching'
-        // ]);
-        // Kategori::create([
-        //     'nama' => 'Coaching Academy'
-        // ]);
-        // Kategori::create([
-        //     'nama' => 'Our Coaching'
-        // ]);
+        Kategori::create([
+            'nama' => 'Corporate Coaching'
+        ]);
+        Kategori::create([
+            'nama' => 'Coaching Academy'
+        ]);
+        Kategori::create([
+            'nama' => 'Our Coaching'
+        ]);
         User::create([
             'name' => 'admin',
             'email' => 'admin@daitonmitrasarana.co.id',

@@ -17,6 +17,11 @@
                     <i class="fas fa-user"></i>
                     <span>User</span></a>
             </li>
+            <li class="  {{ request()->is('admin/kategori*') ? 'active' : '' }} ">
+                <a class="nav-link" href="{{ route('livewire-kategori') }}">
+                    <i class="fas fa-cubes"></i>
+                    <span>Kategori</span></a>
+            </li>
             <li class="  {{ request()->is('admin/artikel*') ? 'active' : '' }} ">
                 <a class="nav-link" href="{{ route('admin-livewire-artikel') }}"><i
                         class="fas fa-book-reader"></i>
