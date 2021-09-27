@@ -28,12 +28,15 @@ class Index extends Component
         })->first();
 
         $webmaster = HomeWebmaster::orderBy('id')->first();
-        visitor()->visit(); // create a visit log
+
+        $countArtikel = Artikel::count();
+
         return view('livewire.front.index', [
             'satu' => $artikel1,
             'dua' => $artikel2,
             'byKategori' => $byKategori,
-            'webmaster' => $webmaster
+            'webmaster' => $webmaster,
+            'countArtikel' => $countArtikel
         ])->extends('layouts.front')->section("content");
     }
 

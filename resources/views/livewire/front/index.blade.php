@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="ml-4">
-                            <div class="font-bold  text-xl">90+ Artikel</div>
+                            <div class="font-bold  text-xl">{{ $countArtikel }}+ Artikel</div>
                             <div class="text-gray-600 text-xs">
                                 Artikel seputar produk <br>
                                 untuk info para mitra
