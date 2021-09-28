@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PesanController;
 use App\Http\Controllers\Admin\Webmaster\AboutController;
 use App\Http\Controllers\Admin\Webmaster\HomeController;
 use App\Http\Controllers\Admin\Webmaster\KontakController;
+use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Livewire\Admin\Artikel;
 use App\Http\Livewire\Admin\ArtikelCreate;
 use App\Http\Livewire\Admin\ArtikelEdit;
@@ -71,3 +72,4 @@ Route::get('admin/webmaster/kontak', [KontakController::class, 'index'])->name('
 Route::put('admin/webmaster/kontak/update/{id}', [KontakController::class, 'update'])->name('webmaster-kontak-update')->middleware('auth', 'admin');
 
 Route::get('admin/kategori', KategoriLivewire::class)->name('livewire-kategori');
+Route::get('artikel/{slug}', [FrontController::class, 'ArtikelDetail'])->name('detail-artikel-dua');

@@ -23,7 +23,7 @@ class Index extends Component
 
         $artikel1 = Artikel::orderBy('id', 'desc')->first();
         $artikel2 = Artikel::orderBy('id', 'desc')->limit(4)->get();
-        $byKategori = Kategori::where('nama', 'Corporate Coaching')->with('artikel', function ($query) {
+        $byKategori = Kategori::orderBy('id', 'asc')->with('artikel', function ($query) {
             $query->limit(3)->get();
         })->first();
 

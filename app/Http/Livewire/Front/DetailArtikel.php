@@ -14,23 +14,29 @@ class DetailArtikel extends Component
     public function mount($slug)
     {
         $this->slug = $slug;
+        // $this->artikel = Artikel::where('slug', $this->slug)->with(['image' => function ($query) {
+        //     $query->limit(2)->get();
+        // }])->with('komentar')->first();
+        // dd($this->artikel->komentar);
+        // if ($this->artikel->image->count() < 2) {
+        //     $this->isfullImgHeader = true;
+        // }
+        $this->artikel = Artikel::where('slug', $slug)->with('image', 'komentar.reply')->first();
     }
     public function render()
     {
-        $this->artikel = Artikel::where('slug', $this->slug)->with(['image' => function ($query) {
-            $query->limit(2)->get();
-        }])->with('komentar')->first();
-        visitor()->visit($this->artikel); // create a visit log
-        // dd($this->artikel->komentar);
-        visitor()->visit($this->artikel);
         if ($this->artikel->image->count() < 2) {
             $this->isfullImgHeader = true;
         }
+
         $byKategori = Kategori::where('id', $this->artikel->kategori_id)->with('artikel')->first();
         // dd($byKategori);
+        $komentar_t = Komentar::where('artikel_id', $this->artikel->id)->get();
+        // dd($komentar_t);
         return view('livewire.front.detail-artikel', [
             'item' => $this->artikel,
-            'byKategori' => $byKategori
+            'byKategori' => $byKategori,
+            'komentar_t' => $komentar_t
         ])->extends('layouts.front')->section('content');
     }
 

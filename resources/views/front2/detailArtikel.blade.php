@@ -1,4 +1,6 @@
-<div>
+@extends('layouts.front')
+@section('content')
+    <div>
     @section('title')
         {{ $item->title }}
     @endsection
@@ -78,16 +80,15 @@
     {{-- enddeskripsi --}}
 
     {{-- komentar --}}
-    <div class="md:px-20 px-4 mt-6">
+    {{-- <div class="md:px-20 px-4 mt-6">
         <div class="font-semibold">Komentar</div>
         <div class="grid grid-flow-row grid-cols-12 bg-gray-200 px-2 md:p-4 mt-4">
-            @forelse ($komentar_t as $k)
-
-                <div class="col-span-1 mx-auto my-2">
+            @forelse ($item->komentar as $k)
+                <div class="col-span-1 mx-auto">
                     <img src="https://source.unsplash.com/random/100x100?sig={{ $k->id }}" alt="image"
                         class="rounded-full border border-white md:h-12">
                 </div>
-                <div class="ml-2 font-semibold col-span-11 my-2">{{ $k->nama }}
+                <div class="ml-2 font-semibold col-span-11">{{ $k->nama }}
                     <div class="font-light text-sm">{{ $k->body }}
                     </div>
                 </div>
@@ -95,7 +96,7 @@
                 <div class="text-gray-900 text-lg  col-span-12 text-center">Tidak ada komantar</div>
             @endforelse
         </div>
-    </div>
+    </div> --}}
     {{-- endkomentar --}}
 
     {{-- new komentar --}}
@@ -122,12 +123,13 @@
     </div>
     {{-- endnew komentar --}}
 </div>
+@endsection
 
 @push('script')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script>
-        window.addEventListener('swal', function(e) {
-            Swal.fire(e.detail);
-        });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script>
+    window.addEventListener('swal', function(e) {
+        Swal.fire(e.detail);
+    });
+</script>
 @endpush

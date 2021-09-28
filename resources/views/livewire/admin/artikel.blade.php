@@ -73,6 +73,12 @@
                 <div class="md:px-10 pb-8">
                     <div class="font-bold">{{ $komen->nama }}</div>
                     <div>{{ $komen->body }}</div>
+                    <div class="px-2">
+                        <hr class="my-2">
+                        @foreach ($komen->reply as $r)
+                            <div class="mt-1">{{ $r->body }}</div>
+                        @endforeach
+                    </div>
                 </div>
 
             @endforeach

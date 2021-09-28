@@ -17,7 +17,7 @@ class CreateArtikelsTable extends Migration
             $table->id();
             $table->string('slug')->nullable();
             $table->foreignId('kategori_id')->constrained('kategoris')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             $table->string('title');
             $table->string('thumbnail')->nullable();
             $table->longText('body');
