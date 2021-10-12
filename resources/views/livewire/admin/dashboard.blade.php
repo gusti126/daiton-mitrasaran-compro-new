@@ -61,11 +61,6 @@
                 <livewire:livewire-pie-chart :pie-chart-model="$pieChart" />
             </div>
         </div>
-        <div class="col-span-6 bg-white shadow-sm p-4">
-            <div style="height: 400px;">
-                <livewire:livewire-column-chart :column-chart-model="$columnChartModel" />
-            </div>
-        </div>
     </div>
 
 
